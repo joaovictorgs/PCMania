@@ -81,7 +81,7 @@ public class Main {
         cliente.nome = entrada.nextLine();
         System.out.println("Opa "+cliente.nome+" agora vou precisar do seu cfp, só escreve os números extensos por exemplo 12345678901, sim a empresa me forçou a usar isso de exemplo" );
         cliente.cpf = entrada.nextLong();   
-        System.out.println("A compra vai funcionar assim:");
+        System.out.println("Perfeito, a compra vai funcionar assim:");
         while (opcao!=0) {
             System.out.println("Selecione uma opção sendo \n1-OPÇÃO1 \n2-OPÇÃO2 \n3-OPÇÃO3 \n0-FINALIZAR COMPRA");
             opcao = entrada.nextInt();
