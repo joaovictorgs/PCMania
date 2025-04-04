@@ -59,11 +59,8 @@ public class Main {
         opcao3.sistemaOperacional.nome = "Windows 10";
         opcao3.sistemaOperacional.tipo = 64;
         opcao3.addMemoriaUSB(memoria1000); 
-
-        
-        opcao2.mostraPCConfigs();
-        opcao3.mostraPCConfigs();
         int opcao=4;
+
         Scanner entrada = new Scanner(System.in);
  
         
@@ -72,9 +69,9 @@ public class Main {
 	    System.out.println("Claro que estou! Bom mesmo você sabendo da promoção sou obrigado pela empresa a contar elas então ai vai, treinei o dia todo pra isso");
         System.out.println("A primeira promoção custa " + opcao1.preco + "e você ganha:");
 	    opcao1.mostraPCConfigs();
-        System.out.println("A primeira promoção custa " + opcao2.preco + "e você ganha:");
+        System.out.println("A Segunda promoção custa " + opcao2.preco + "e você ganha:");
 	    opcao2.mostraPCConfigs();
-        System.out.println("A primeira promoção custa " + opcao3.preco + "e você ganha:");
+        System.out.println("A Terceira promoção custa " + opcao3.preco + "e você ganha:");
 	    opcao3.mostraPCConfigs();
 	    System.out.println("Bom vamos fazer primeiro cadastramos seu cpf e seu nome e depois você me informar as opções de promoção você quer");
         System.out.println("Poderia por favor informar seu nome pra inciarmos o cadastro?");
@@ -119,7 +116,7 @@ public class Main {
         if(cliente.compra.length!=0){
         System.out.println("Opa "+cliente.nome+" a compra foi finalizada! o que foi comprado foi");
         for(int i=0;i<cliente.compra.length;i++){
-            System.out.println("o "+i+1+"º computador comprado é o:");
+            System.out.println("O "+((int)i+1)+"º computador comprado é o:");
             cliente.compra[i].mostraPCConfigs();
         }
         System.out.println("O valor total da compra foi:"+cliente.calculaTotalCompra() + " R$");
