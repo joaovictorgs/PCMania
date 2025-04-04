@@ -1,3 +1,5 @@
-Nome: João Victor Godoy da Silva\n
-Curso: Engenharia De Software Noturno\n
-Matricula: 364\n
+Nome: João Victor Godoy da Silva
+
+Curso: Engenharia De Software Noturno
+
+Matricula: 364
