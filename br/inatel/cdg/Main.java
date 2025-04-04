@@ -116,12 +116,16 @@ public class Main {
                 cliente.setCompra(nova_compra);
             }
         }
-        System.out.println("Compra Finalizada! o que foi comprado foi");
+        if(cliente.compra.length!=0){
+        System.out.println("Opa "+cliente.nome+" a compra foi finalizada! o que foi comprado foi");
         for(int i=0;i<cliente.compra.length;i++){
             System.out.println("o "+i+1+"º computador comprado é o:");
             cliente.compra[i].mostraPCConfigs();
         }
         System.out.println("O valor total da compra foi:"+cliente.calculaTotalCompra() + " R$");
         System.out.println("Obrigado por comprar conosco, a minha matricula é 364... É to falando demais, mas é tudo burocracia da empresa");
+        }else{
+            System.out.println("Ah... "+cliente.nome+" Você... Não comprou nada... Valeu por passar eu acho, minha matricula é 364... Tenha um bom dia eu acho");
+        }
     }
 }
