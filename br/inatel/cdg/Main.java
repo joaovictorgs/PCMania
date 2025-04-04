@@ -1,10 +1,14 @@
 package br.inatel.cdg;
 
+import java.util.Scanner;
+
+import br.inatel.cdg.PCMania.Cliente.Cliente;
 import br.inatel.cdg.PCMania.PC.Computador.Computador;
 import br.inatel.cdg.PCMania.PC.MemoriaUSB.MemoriaUSB;
 
 public class Main {
     public static void main(String[] args) {
+        Cliente cliente = new Cliente();
         MemoriaUSB memoria16 = new MemoriaUSB();
         memoria16.nome = "Pen-drive";
         memoria16.capacidade = 16000;
@@ -59,5 +63,40 @@ public class Main {
         opcao1.mostraPCConfigs();
         opcao2.mostraPCConfigs();
         opcao3.mostraPCConfigs();
+        int opcao=4;
+        Scanner entrada = new Scanner(System.in);
+        while (opcao!=0) {
+            opcao = entrada.nextInt();
+            if((opcao<0)||(opcao>3)){
+                System.out.println("opção invalida, favor selecionar um valor entre 0 a 3");
+            }
+            if(opcao==1){
+                Computador[] compra = cliente.compra;
+                Computador[] nova_compra = new Computador[compra.length + 1];
+                for (int i = 0; i < compra.length; i++) {
+                    nova_compra[i] = compra[i];
+                }   
+                nova_compra[compra.length] = opcao1;
+                cliente.setCompra(nova_compra);
+            }
+            if(opcao==2){
+                Computador[] compra = cliente.compra;
+                Computador[] nova_compra = new Computador[compra.length + 1];
+                for (int i = 0; i < compra.length; i++) {
+                    nova_compra[i] = compra[i];
+                }   
+                nova_compra[compra.length] = opcao2;
+                cliente.setCompra(nova_compra);
+            }
+            if(opcao==3){
+                Computador[] compra = cliente.compra;
+                Computador[] nova_compra = new Computador[compra.length + 1];
+                for (int i = 0; i < compra.length; i++) {
+                    nova_compra[i] = compra[i];
+                }   
+                nova_compra[compra.length] = opcao3;
+                cliente.setCompra(nova_compra);
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ public class Computador {
     }
 
     public void mostraPCConfigs(){
-        System.out.println("As configurações do computador são:\nMarca: "+marca+"\nSistema Operacional: "+sistemaOperacional.nome +" " +converteMegaPraGigaOuTera(sistemaOperacional.tipo ) +"b");
+        System.out.println("As configurações do computador são:\nMarca: "+marca+"\nSistema Operacional: "+sistemaOperacional.nome +" " +converteMegaPraGigaOuTera(sistemaOperacional.tipo ) +"bits");
         System.out.println("Processador: "+hardwareBasicos[0].nome +" "+ (int)hardwareBasicos[0].capacidade + "MhZ");
         System.out.println("Memória RAM: "+hardwareBasicos[1].nome +" "+ converteMegaPraGigaOuTera(hardwareBasicos[1].capacidade)  + "b");
         System.out.println("Memória: "+hardwareBasicos[2].nome +" "+ converteMegaPraGigaOuTera(hardwareBasicos[2].capacidade) + "b");
