@@ -31,7 +31,7 @@ public class Main {
         opcao1.hardwareBasicos[2].nome = "HD";
         opcao1.hardwareBasicos[2].capacidade = 500;
         opcao1.sistemaOperacional.nome = "Linux Ubuntu";
-        opcao1.sistemaOperacional.tipo = 32000;
+        opcao1.sistemaOperacional.tipo = 32;
         opcao1.addMemoriaUSB(memoria16);
         
         Computador opcao2 = new Computador();
@@ -44,7 +44,7 @@ public class Main {
         opcao2.hardwareBasicos[2].nome = "HD";
         opcao2.hardwareBasicos[2].capacidade = 1000000;  
         opcao2.sistemaOperacional.nome = "Windows 8";
-        opcao2.sistemaOperacional.tipo = 64000;
+        opcao2.sistemaOperacional.tipo = 64;
         opcao2.addMemoriaUSB(memoria32);
 
         Computador opcao3 = new Computador();
@@ -57,18 +57,36 @@ public class Main {
         opcao3.hardwareBasicos[2].nome = "HD";
         opcao3.hardwareBasicos[2].capacidade = 2000000;
         opcao3.sistemaOperacional.nome = "Windows 10";
-        opcao3.sistemaOperacional.tipo = 64000;
+        opcao3.sistemaOperacional.tipo = 64;
         opcao3.addMemoriaUSB(memoria1000); 
 
-        opcao1.mostraPCConfigs();
+        
         opcao2.mostraPCConfigs();
         opcao3.mostraPCConfigs();
         int opcao=4;
         Scanner entrada = new Scanner(System.in);
+ 
+        
+
+	    System.out.println("Opa Olá bem vindo a PCMania sou João Victor Godoy da Silva e estou cursando engenharia de softaware... Mas isso não importa né? Bom vejo que está aqui pela incrível promoção da loja estou certo?");
+	    System.out.println("Claro que estou! Bom mesmo você sabendo da promoção sou obrigado pela empresa a contar elas então ai vai, treinei o dia todo pra isso");
+        System.out.println("A primeira promoção custa " + opcao1.preco + "e você ganha:");
+	    opcao1.mostraPCConfigs();
+        System.out.println("A primeira promoção custa " + opcao2.preco + "e você ganha:");
+	    opcao2.mostraPCConfigs();
+        System.out.println("A primeira promoção custa " + opcao3.preco + "e você ganha:");
+	    opcao3.mostraPCConfigs();
+	    System.out.println("Bom vamos fazer primeiro cadastramos seu cpf e seu nome e depois você me informar as opções de promoção você quer");
+        System.out.println("Poderia por favor informar seu nome pra inciarmos o cadastro?");
+        cliente.nome = entrada.nextLine();
+        System.out.println("Opa "+cliente.nome+" agora vou precisar do seu cfp, só escreve os números extensos por exemplo 12345678901, sim a empresa me forçou a usar isso de exemplo" );
+        cliente.cpf = entrada.nextLong();   
+        System.out.println("A compra vai funcionar assim:");
         while (opcao!=0) {
+            System.out.println("Selecione uma opção sendo \n1-OPÇÃO1 \n2-OPÇÃO2 \n3-OPÇÃO3 \n0-FINALIZAR COMPRA");
             opcao = entrada.nextInt();
             if((opcao<0)||(opcao>3)){
-                System.out.println("opção invalida, favor selecionar um valor entre 0 a 3");
+                System.out.println("Opção invalida, favor selecionar um valor entre 0 a 3");
             }
             if(opcao==1){
                 Computador[] compra = cliente.compra;
@@ -98,5 +116,12 @@ public class Main {
                 cliente.setCompra(nova_compra);
             }
         }
+        System.out.println("Compra Finalizada! o que foi comprado foi");
+        for(int i=0;i<cliente.compra.length;i++){
+            System.out.println("o "+i+1+"º computador comprado é o:");
+            cliente.compra[i].mostraPCConfigs();
+        }
+        System.out.println("O valor total da compra foi:"+cliente.calculaTotalCompra() + " R$");
+        System.out.println("Obrigado por comprar conosco, a minha matricula é 364... É to falando demais, mas é tudo burocracia da empresa");
     }
 }

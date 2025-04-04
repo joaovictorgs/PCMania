@@ -8,10 +8,14 @@ public class Cliente {
     public Computador[] compra;
 
     public float calculaTotalCompra(){
-        return 2;
+        float total=0;
+        for(int i=0;i<compra.length;i++){
+            total+=compra[i].preco;
+        }
+        return total;
     }
     public Cliente (){
-        compra = new Computador[1];
+        compra = new Computador[0];
     }
     public void setCompra(Computador[] novaCompra){
         this.compra=novaCompra;
