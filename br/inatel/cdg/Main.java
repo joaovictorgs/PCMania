@@ -124,5 +124,6 @@ public class Main {
         }else{
             System.out.println("Ah... "+cliente.nome+" Você... Não comprou nada... Valeu por passar eu acho, minha matricula é 364... Tenha um bom dia eu acho");
         }
+        entrada.close();
     }
 }
